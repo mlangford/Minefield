@@ -433,6 +433,7 @@
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
+            this.btnFlash = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -4049,6 +4050,7 @@
             // 
             // btnRight
             // 
+            this.btnRight.Image = global::minefield.Properties.Resources.right16;
             this.btnRight.Location = new System.Drawing.Point(403, 475);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(20, 20);
@@ -4058,6 +4060,7 @@
             // 
             // btnLeft
             // 
+            this.btnLeft.Image = global::minefield.Properties.Resources.left16;
             this.btnLeft.Location = new System.Drawing.Point(349, 475);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(20, 20);
@@ -4067,6 +4070,7 @@
             // 
             // btnDown
             // 
+            this.btnDown.Image = global::minefield.Properties.Resources.down16;
             this.btnDown.Location = new System.Drawing.Point(375, 488);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(20, 20);
@@ -4076,6 +4080,7 @@
             // 
             // btnUp
             // 
+            this.btnUp.Image = global::minefield.Properties.Resources.up16;
             this.btnUp.Location = new System.Drawing.Point(375, 460);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(20, 20);
@@ -4083,11 +4088,24 @@
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
+            // btnFlash
+            // 
+            this.btnFlash.BackColor = System.Drawing.Color.Yellow;
+            this.btnFlash.Location = new System.Drawing.Point(55, 475);
+            this.btnFlash.Name = "btnFlash";
+            this.btnFlash.Size = new System.Drawing.Size(60, 20);
+            this.btnFlash.TabIndex = 419;
+            this.btnFlash.Text = "!show!";
+            this.btnFlash.UseVisualStyleBackColor = false;
+            this.btnFlash.Click += new System.EventHandler(this.btnFlash_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(464, 522);
+            this.Controls.Add(this.btnFlash);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnDown);
@@ -4511,6 +4529,7 @@
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnFlash;
     }
 }
 

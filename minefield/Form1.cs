@@ -18,10 +18,17 @@ namespace minefield
 
             //place the sprite at its start-up location
             drawspite(atX, atY);
+
+            //make bombs
+            placeBombs(80);
         }
 
+        //global variables traking current position of sprite
         int atX = 10;
         int atY = 20;
+
+        //a Boolean array that indicates where the mines are!
+        bool[,] bombs = new bool[21, 21];
 
         //function to return the Label at location (x,y)
         private Label getLabel(int x, int y)
@@ -113,6 +120,58 @@ namespace minefield
             }
         }
 
+        private void btnFlash_Click(object sender, EventArgs e)
+        {
+            showBombs();
+        }
+
+        //place those mines
+        private void placeBombs(int target)
+        {
+            //create a random number generator
+            Random r = new Random();
+
+            //set up variables
+            int x;
+            int y;
+            int k = target;
+
+            //clear the current mines list
+            Array.Clear(bombs, 0, bombs.Length);
+
+            //loop to fill with desired number of mines
+            do
+            {
+                x = r.Next(1, 20);
+                y = r.Next(1, 20);
+                if (!bombs[x, y])
+                {
+                    bombs[x, y] = true;
+                    k--;
+                }
+            } while (k > 0);
+        }
+
+        //show the bombs!!
+        private void showBombs()
+        {
+            Label lbl;
+            for (int y = 1; y < 21; y++)
+            {
+                for (int x = 1; x < 21; x++)
+                {
+                    lbl = getLabel(x,y);
+                    if (bombs[x, y])
+                    {
+                        lbl.BackColor = Color.Yellow;
+                    }
+                    else
+                    {
+                        lbl.BackColor = Color.DarkGray;
+                    }
+                }
+            }
+        }
 
     }
 }
