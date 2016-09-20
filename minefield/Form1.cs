@@ -57,6 +57,7 @@ namespace minefield
             lbl.Image = null;
         }
 
+
         private void btnUp_Click(object sender, EventArgs e)
         {
             //if allowed, update location
@@ -70,5 +71,48 @@ namespace minefield
                 drawspite(atX, atY);
             }
         }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            //if allowed, update location
+            if (atY < 20 )
+            {
+                //delete sprite at current location
+                wipespite(atX, atY);
+                //move up by one row
+                atY++;
+                //draw sprite at current location
+                drawspite(atX, atY);
+            }
+        }
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            //if allowed, update location
+            if (atX < 20)
+            {
+                //delete sprite at current location
+                wipespite(atX, atY);
+                //move up by one row
+                atX++;
+                //draw sprite at current location
+                drawspite(atX, atY);
+            }
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            //if allowed, update location
+            if (atX > 1)
+            {
+                //delete sprite at current location
+                wipespite(atX, atY);
+                //move up by one row
+                atX--;
+                //draw sprite at current location
+                drawspite(atX, atY);
+            }
+        }
+
+
     }
 }

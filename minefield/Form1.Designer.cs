@@ -429,8 +429,8 @@
             this.label398 = new System.Windows.Forms.Label();
             this.label399 = new System.Windows.Forms.Label();
             this.label400 = new System.Windows.Forms.Label();
-            this.btnLeft = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -4047,35 +4047,38 @@
             this.label400.Size = new System.Drawing.Size(20, 20);
             this.label400.TabIndex = 400;
             // 
-            // btnLeft
-            // 
-            this.btnLeft.Location = new System.Drawing.Point(349, 475);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.Size = new System.Drawing.Size(18, 20);
-            this.btnLeft.TabIndex = 418;
-            this.btnLeft.UseVisualStyleBackColor = true;
-            // 
             // btnRight
             // 
             this.btnRight.Location = new System.Drawing.Point(403, 475);
             this.btnRight.Name = "btnRight";
-            this.btnRight.Size = new System.Drawing.Size(18, 20);
+            this.btnRight.Size = new System.Drawing.Size(20, 20);
             this.btnRight.TabIndex = 417;
             this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.Location = new System.Drawing.Point(349, 475);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(20, 20);
+            this.btnLeft.TabIndex = 418;
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // btnDown
             // 
             this.btnDown.Location = new System.Drawing.Point(375, 488);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(18, 20);
+            this.btnDown.Size = new System.Drawing.Size(20, 20);
             this.btnDown.TabIndex = 416;
             this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnUp
             // 
             this.btnUp.Location = new System.Drawing.Point(375, 460);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(18, 20);
+            this.btnUp.Size = new System.Drawing.Size(20, 20);
             this.btnUp.TabIndex = 415;
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
