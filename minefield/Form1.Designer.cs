@@ -434,6 +434,7 @@
             this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnFlash = new System.Windows.Forms.Button();
+            this.label401 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -4099,12 +4100,23 @@
             this.btnFlash.UseVisualStyleBackColor = false;
             this.btnFlash.Click += new System.EventHandler(this.btnFlash_Click);
             // 
+            // label401
+            // 
+            this.label401.AutoSize = true;
+            this.label401.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label401.Location = new System.Drawing.Point(35, 9);
+            this.label401.Name = "label401";
+            this.label401.Size = new System.Drawing.Size(25, 25);
+            this.label401.TabIndex = 420;
+            this.label401.Text = "?";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(464, 522);
+            this.Controls.Add(this.label401);
             this.Controls.Add(this.btnFlash);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.btnRight);
@@ -4119,6 +4131,7 @@
             this.Text = " *** !! MINEFIELD   !!   ***";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -4530,6 +4543,7 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnFlash;
+        private System.Windows.Forms.Label label401;
     }
 }
 

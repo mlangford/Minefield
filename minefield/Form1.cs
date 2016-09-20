@@ -20,7 +20,8 @@ namespace minefield
             drawspite(atX, atY);
 
             //make bombs
-            placeBombs(80);
+            placeBombs(50);
+            chkbomb(atX, atY);
         }
 
         //global variables traking current position of sprite
@@ -76,6 +77,9 @@ namespace minefield
                 atY--;
                 //draw sprite at current location
                 drawspite(atX, atY);
+
+                //check for bombs!
+                chkbomb(atX, atY);
             }
         }
 
@@ -90,6 +94,9 @@ namespace minefield
                 atY++;
                 //draw sprite at current location
                 drawspite(atX, atY);
+
+                //check for bombs!
+                chkbomb(atX, atY);
             }
         }
         private void btnRight_Click(object sender, EventArgs e)
@@ -103,6 +110,9 @@ namespace minefield
                 atX++;
                 //draw sprite at current location
                 drawspite(atX, atY);
+
+                //check for bombs!
+                chkbomb(atX, atY);
             }
         }
 
@@ -117,6 +127,9 @@ namespace minefield
                 atX--;
                 //draw sprite at current location
                 drawspite(atX, atY);
+
+                //check for bombs!
+                chkbomb(atX, atY);
             }
         }
 
@@ -150,6 +163,64 @@ namespace minefield
                     k--;
                 }
             } while (k > 0);
+        }
+
+        //check for bomb at current location
+        private void chkbomb(int X, int Y)
+        {
+            if (bombs[X, Y])
+            {
+                this.BackColor = Color.Red;
+                //end of game
+                btnDown.Enabled = false;
+                btnUp.Enabled = false;
+                btnRight.Enabled = false;
+                btnLeft.Enabled = false;
+                showBombs();       
+            }
+            else
+            {
+                //count bombs around current location
+                countBombs(X, Y);
+            }
+        }
+
+        //count and show adjacent bombs
+        private void countBombs(int X, int Y)
+        {
+            int count = 0;
+            int newx;
+            int newy;
+
+            newx = X - 1;
+            if (newx > -1)
+            {
+                if (bombs[newx, Y])
+                    count++;
+            }
+
+            newx = X + 1;
+            if (newx < 21)
+            {
+                if (bombs[newx, Y])
+                    count++;
+            }
+
+            newy = Y - 1;
+            if (newy > -1)
+            {
+                if (bombs[X, newy])
+                    count++;
+            }
+
+            newy = Y + 1;
+            if (newy < 21)
+            {
+                if (bombs[X, newy])
+                    count++;
+            }
+
+            label401.Text = count.ToString();
         }
 
         //show the bombs!!
